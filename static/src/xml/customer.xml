@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="top_customers.customer_template">
+    <div class="container">
+        <section class="s_carousel_wrapper" data-vxml="001">
+            <div t-attf-id="myCarousel{{uniq}}"
+                 class="s_carousel s_carousel_default carousel slide"
+                 data-bs-interval="10000">
+                <div style="height:50px">
+                    </div>
+                <center>
+                    <h3>TOP 10 CUSTOMERS</h3>
+                </center>
+                <br/>
+                <div id="slideshow sample" class="carousel slide"
+                     data-bs-ride="carousel" data-bs-interval="5000"
+                     style="margin:70px;">
+                    <div class="carousel-inner">
+
+                        <t t-foreach="result" t-as="customer">
+
+
+                            <div t-attf-class="carousel-item #{customer.set_active ? 'active' :''}">
+                                <div class="row">
+                                    <t t-foreach="customer" t-as="res">
+                                        <div class="card"
+                                             style="width: 15.25rem;">
+                                            <a t-attr-href="/customer/top/new?customer_id=#{res[1]}" method="post" enctype="multipart/form-data" class="o_mark_required">
+                            <img class="card-img-top"
+                                 t-attf-src="/web/image/res.partner/{{res[1]}}/image_1920"
+                                 alt="Card image cap"/>
+                                            <div class="card-body">
+                                                <form action="/customer/top/new"
+                                                      method="post"
+                                                      enctype="multipart/form-data"
+                                                      class="o_mark_required">
+                                                <input type="hidden"
+                                                       name="customer"
+                                                       t-att-value="res[1]"/>
+                                                    <h5 class="card-title" align="center">
+                                                    <t t-esc="res[0]"/>
+                                                </h5>
+                                                </form>
+
+
+                                            </div>
+                                            </a>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+                <a class="carousel-control-prev o_not_editable"
+                   contenteditable="false"
+                   t-attr-href="#myCarousel{{uniq}}" data-bs-slide="prev"
+                   role="img" aria-label="Previous"
+                   title="Previous">
+                        <span class="carousel-control-prev-icon"/>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+
+
+                <a class="carousel-control-next o_not_editable"
+                   contenteditable="false"
+                   t-attr-href="#myCarousel{{uniq}}" data-bs-slide="next"
+                   role="img" aria-label="Next" title="Next" style="margin:194px;">
+                    <span class="carousel-control-next-icon"/>
+
+
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+
+        </section>
+    </div>
+    </t>
+
+
+</templates>

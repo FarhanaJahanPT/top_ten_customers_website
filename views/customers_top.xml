@@ -1,0 +1,151 @@
+<odoo>
+    <data>
+        <template id="customers_snippet_img" name="Customers Snippet">
+            <section class="row align-items-center">
+                <div class="container">
+                         <div style="height:20px">
+                    </div>
+                         <style>
+                             form.o_mark_required{
+                              border: 1px solid grey;
+                              width:50%;
+                              padding-right: 50px;
+                            }
+                                                         span.s_website_form_label_content{
+                                                           padding-left: 60px;
+                            }
+                         </style>
+                         <div class="back_button" align="left">
+                                <a t-attf-href="/"
+                                   name="create">Back</a>
+
+                         </div>
+
+
+                          <center>
+                             <div class="row">
+
+                   <img class="card-img-top" t-attf-src="/web/image/res.partner/{{customer.id}}/image_1920" alt="Card Image Cap"/>
+                    </div>
+                         </center>
+
+                    <h2>
+                        <center>
+                            <b><t t-esc="customer.name"/></b>
+                            <br/>
+                        </center>
+                    </h2>
+                         <div style="height:20px">
+                    </div>
+                        <center>
+
+                          <form align="center" id="top_customer" action="/customer/top/new" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="" data-success-page="">
+                            <div style="height:20px">
+                            </div>
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                           <div class="s_website_form_rows row s_col_no_bgcolor">
+                               <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                   <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <t t-if="customer.name">
+                            <div align="left">
+                                <span class="s_website_form_label_content"><b>Name  :</b></span>
+                                       <span class="form-control"><t t-esc="customer.name"/></span>
+                                   </div>
+                            </t>
+                               </div>
+                           </div>
+                           </div>
+                              <div style="height:20px">
+                    </div>
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                           <div class="s_website_form_rows row s_col_no_bgcolor">
+                               <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                   <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <t t-if="customer.contact_address">
+                            <div align="left">
+                                <span class="s_website_form_label_content"><b>Address :</b></span>
+                                       <span class="form-control"><t t-esc="customer.contact_address"/></span>
+                                   </div>
+                            </t>
+                                   </div>
+                               </div>
+                           </div>
+                              <div style="height:20px">
+                    </div>
+
+                              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                           <div class="s_website_form_rows row s_col_no_bgcolor">
+                               <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                   <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <t t-if="customer.phone">
+                            <div align="left">
+                                <span class="s_website_form_label_content"><b>Phone :</b></span>
+                                       <span class="form-control"><t t-esc="customer.phone"/></span>
+                                   </div>
+                            </t>
+                                   </div>
+                               </div>
+                           </div>
+                              <div style="height:20px">
+                    </div>
+                               <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                           <div class="s_website_form_rows row s_col_no_bgcolor">
+                               <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                   <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <t t-if="customer.email">
+
+                            <div align="left">
+                                <span class="s_website_form_label_content"><b>Email  :</b></span>
+                                       <span class="form-control"><t t-esc="customer.email"/></span>
+                            </div>
+                            </t>
+                                   </div>
+                               </div>
+                           </div>
+                              <div style="height:20px">
+                    </div>
+                               <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                           <div class="s_website_form_rows row s_col_no_bgcolor">
+                               <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                   <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <t t-if="customer.website">
+
+                            <div align="left">
+                                <span class="s_website_form_label_content"><b>Website  :</b></span>
+                                       <span class="form-control"><t t-esc="customer.website"/></span>
+                            </div>
+                            </t>
+                                   </div>
+                               </div>
+                           </div>
+                              <div style="height:20px">
+                    </div>
+<!--                               <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
+<!--                           <div class="s_website_form_rows row s_col_no_bgcolor">-->
+<!--                               <div class="form-group col-12 s_website_form_field s_website_form_required" data-type="char" data-name="Field">-->
+<!--                                   <div class="row s_col_no_resize s_col_no_bgcolor">-->
+<!--                            <div align="left">-->
+<!--                                <span class="s_website_form_label_content"><b>Address :</b></span>-->
+<!--                                       <span class="form-control"><t t-esc="customer.address_name"/></span>-->
+<!--                            </div>-->
+<!--                                   </div>-->
+<!--                               </div>-->
+<!--                           </div>-->
+                              <div style="height:20px">
+                    </div>
+
+                          </form>
+                         </center>
+                </div>
+            </section>
+        </template>
+    </data>
+
+    <template id="external_snippets" inherit_id="website.snippets" priority="9">
+   <xpath expr="//div[@id='snippet_feature']//t[@t-snippet][last()]" position="after">
+       <t t-snippet="top_customers.top_customer_snippet"/>
+
+   </xpath>
+</template>
+
+</odoo>

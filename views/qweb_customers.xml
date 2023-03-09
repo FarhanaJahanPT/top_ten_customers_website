@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="top_customer_snippet" name="Top Customers">
+            <section class="container dynamic_snippet_blog">
+                <div class="qweb_customer">
+
+                </div>
+            </section>
+        </template>
+    </data>
+</odoo>
